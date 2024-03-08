@@ -15,7 +15,7 @@ def members():
 
 @app.route('/success/<int:score>')
 def success(score):
-    return '<html><body><h1>The Person is Pass</h1></body></html>'
+    return '<html><body><h1>The Person is Pass </h1></body></html>'
  
  
 @app.route('/fail/<int:score>')
