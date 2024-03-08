@@ -1,3 +1,11 @@
+# Jinja 2 Template engin
+
+'''
+{%..%} condition, for loops, statments
+{{  }} expression to print output
+{#..#} this is for comments
+'''
+
 from flask import Flask,redirect,url_for,render_template,request
 
 ### WSGI Application
@@ -10,13 +18,13 @@ def welcome():
 
 @app.route('/success/<int:score>')
 def success(score):
-    res =''
+    res = ''
     if score>=50:
         res = 'Pass'
     else:
-        res='Fail'
-        
-    return render_template('result.html',result = res) 
+        res = 'Fail'
+    exp = {'score': score, 'res': res}
+    return render_template('result.html',result = exp) 
  
  
 @app.route('/fail/<int:score>')
